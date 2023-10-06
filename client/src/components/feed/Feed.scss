@@ -1,0 +1,9 @@
+$FlexBodyValue: 5.5;
+.feed{
+    flex: $FlexBodyValue;
+    
+    .feedWrapper{
+        padding: 20px;
+        
+    }
+}
