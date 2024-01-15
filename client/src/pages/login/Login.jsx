@@ -6,7 +6,7 @@ export const Login = () => {
             <div className="loginWrapper">
                 <div className="loginLeft">
                     <h3 className="loginLogo">INTROVERTS</h3>
-                    <span className="loginDesc">Connet with freiends and the world around you on INTROVERTS(selectively)</span>
+                    <span className="loginDesc">Connet with friends and the world around you on INTROVERTS(selectively)</span>
                 </div>
                 <div className="loginRight">
                     <div className="loginBox">

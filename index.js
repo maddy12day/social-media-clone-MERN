@@ -2,13 +2,13 @@ import express from 'express'
 const app = express();
 
 import helmet from 'helmet'
+import cors from 'cors'
 import mongoose from 'mongoose';
 import morgan from 'morgan';
-import dotenv from 'dotenv'
-
-
 //using .env file to store confidencial info and accessing them without making them available in code
+import dotenv from 'dotenv'
 dotenv.config({path:'.env'})
+
 
 
 //building connection with mongodb
@@ -23,6 +23,8 @@ mongoose.connect(process.env.URL).then(()=>{
 app.use(express.json())
 app.use(helmet())
 app.use(morgan('common'))
+app.use(cors())
+app.use(express.static('public'));
 
 
 //importing routes
@@ -35,9 +37,9 @@ import postRoute from './routes/post.js'
 //rest api routes
 app.use('/api/user',usersRoute)
 app.use('/api/auth',authRoute)
-app.use('/api/post',postRoute)
+app.use('/api/posts', postRoute);
 
 
-app.listen(3000,()=>{
-    console.log("listening to port 3000")
+app.listen(8080,()=>{
+    console.log("listening to port ")
 })
