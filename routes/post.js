@@ -98,9 +98,9 @@ router.get('/:id',async(req,res)=>{
     }
 })
 //GET ALL TIMELINE POST
-router.get("/timeline/all", async (req, res) => {
+router.get("/timeline/:userId", async (req, res) => {
   try {
-    const currentUser = await User.findById(req.body.userId);
+    const currentUser = await User.findById(req.params.userId);
 
     if (!currentUser) {
       return res.status(404).json({ message: "User not found" });

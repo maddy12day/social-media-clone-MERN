@@ -5,6 +5,7 @@ import { Topbar } from "../../components/topbar/topbar"
 import { Rightbar } from "../../components/rightbar/Rightbar"
 
 export const Profile = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     return (<>
         <Topbar />
         <div className="profile">
@@ -14,7 +15,7 @@ export const Profile = () => {
                     <div className="profileCover">
                         <img
                             className="profileCoverImg"
-                            src="../../assets/post/3.jpeg"
+                            src={`${PF}post/3.jpeg`}
                             alt=""
                         />
                         <img
